@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+
+h1 {
+    padding: 40px;
+    animation: slideIn 1s;
+}
+
+.item1 {grid-area: sec1;}
+.item2 {grid-area: sec2;}
+.item3 {grid-area: sec3;}
+.item4 {grid-area: sec4;}
+.item5 {grid-area: sec5;}
+.item6 {grid-area: sec6;}
+
+.container div {
+    padding: 30px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 5px grey;
+}
+
+.container h3 {
+    margin-top: 10px;
+}
+
+
+
+.container {
+    padding: 20px 100px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas: 
+    'sec1 sec1 sec1 sec1 sec2 sec2'
+    'sec3 sec3 sec4 sec4 sec2 sec2'
+    'sec5 sec5 sec4 sec4 sec6 sec6';
+    animation: slideIn 1s;
+    opacity: 0;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MEDIUM SIZE GRID
+@media screen and (max-width: 900px) {
+    .container {
+        padding: 15px;
+        display: grid;
+        grid-template-areas: 
+        'sec1 sec1 sec1 sec2 sec2 sec2'
+        'sec3 sec3 sec3 sec4 sec4 sec4'
+        'sec5 sec5 sec5 sec6 sec6 sec6'
+    }
+}
+
+
+
+// SMALL SIZE GRID
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 15px;
+        display: grid;
+        grid-template-areas: 
+        'sec1 sec1 sec1 sec1 sec1 sec1'
+        'sec2 sec2 sec2 sec2 sec2 sec2'
+        'sec3 sec3 sec3 sec3 sec3 sec3'
+        'sec4 sec4 sec4 sec4 sec4 sec4'
+        'sec5 sec5 sec5 sec5 sec5 sec5'
+        'sec6 sec6 sec6 sec6 sec6 sec6'
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+}
